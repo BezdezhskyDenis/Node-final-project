@@ -62,116 +62,36 @@ This sets NODE_ENV to 'development' and runs the app with nodemon for hot reload
 
 - Here you can find API addresses that the server will respond to:
 
-  ### -users api
+### users api
 
-Register / Create new user
+| No. | Method | Route | Description | Access Control |
+| :---: | :---: | :---: | :---: | :---: | :---:|
+| 1. | `POST` | /api/users | - Register a user  | - All |
+| 2. | `POST` | /api/login | - Log in | - All |
+| 3. | `GET`  | /api/users | - Get all users | - Only Administrator |
+| 4. | `GET`  | /api/users/me | - Get user self data | - Registered users - Need to provide (JWT) token |
+| 5. | `GET`  | /api/users/:id | - Get user by id | - This registered user or admin - Need to provide (JWT) token |
+| 6. | `PUT`  | /api/users/:id | - Update user data by id | - This registered user or admin - Need to provide (JWT) token |
+| 7. | `PATCH` | /api/users/release/:id | - Release locked user by id | - Only administrator |
+| 8. | `PATCH` | /api/users/user/:id | - Update any user params by send them in body include (isBusiness) | - This registered user or admin - Need to provide (JWT) token - isAdmin param can be changed only by admin |
+| 9. | `PATCH` | /api/users/isBusiness/:id | - Toggle user business status (isBusiness) | This registered user or admin - Need to provide (JWT) token |
+| 10. | `DELETE` | /api/users/:id | - Delete user by id | This registered user or admin - Need to provide (JWT) token |
 
-```shell
-  POST /api/users
+### cards api
 
-```
-
-Login a user
-
-```shell
-POST /api/login
-
-```
-
-Get my user(me)
-
-```shell
-GET /api/users/me
-```
-
-Get all users(only admin)
-
-```shell
-GET /api/users
-```
-
-Get user by id (only the registered user or admin)
-
-```shell
-GET /api/users/:id
-```
-
-Edit user by id (only the registered user)
-
-```shell
-PUT /api/users/edit/:id
-```
-
-Change user status(regular/business) (only the registered user)
-
-```shell
-PATCH /api/users/:id
-```
-
-Change user status to admin(Only an admin type user can make the request)
-
-```shell
-PATCH /api/users/admin/:id
-```
-
-Delete user
-
-```shell
-DELETE /api/users/:id
-```
+| No. | Method | Route | Description | Access Control |
+| :---: | :---: | :---: | :---: | :---: | :---:|
+| 1. | `POST` | /api/cards | - Create new Business card  | - Need to be Business register user - Need to provide (JWT) token |
+| 2. | `GET`  | /api/cards | - Get all cards | - All |
+| 3. | `GET`  | /api/cards/my-cards | - Get all user cards | - Need to be business register user - Need to provide (JWT) token |
+| 4. | `GET`  | /api/cards/:id | - Get card by id | - All |
+| 5. | `PUT`  | /api/cards/:id | - Update card data | - Need to be owner of this card - Need to provide (JWT) token |
+| 6. | `PATCH`  | /api/cards/:id | - Toggle like of user for the card | - registered user - Need to provide (JWT) token |
+| 7. | `PATCH` | /api/cards/business/:id | - Change card business number by provide in the body | - Only administrator |
+| 8. | `DELETE` | /api/cards/:id | - Delete business card | - User that is owner of this card or admin - Need to provide (JWT) token |
 
 
-### -cards api
-
-create card(Must be a business user to create cards)
-
-```shell
-POST /api/cards
-```
-
-Get all cards
-
-```shell
-GET /api/cards
-```
-
-Get card by id
-
-```shell
-GET /api/cards/id:
-```
-
-Delete card( only the user who created the card or admin)
-
-```shell
-Delete /api/cards/id:
-```
-
-Get my cards(only the registered user)
-
-```shell
-GET /api/cards/my-cards
-```
-
-Like card(only the registered user)
-
-```shell
-PATCH /api/cards/id:
-```
-
-Edit card( only the user who created the card )
-
-```shell
-PUT /api/cards/edit/id:
-```
-
-chang bizNumber( only admin )
-
-```shell
-PATCH /api/cards/editBiz/id:
-```
-
-### -A link to requests in Postman includes a description of what should be put in the body of the request and examples
+### A link to requests in Postman includes a description of what should be put in the body of the request and examples
 
 [API Documentation](https://documenter.getpostman.com/view/28260165/2s9YyzeJyB)
 
