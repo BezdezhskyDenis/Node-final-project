@@ -69,38 +69,26 @@ This sets NODE_ENV to 'development' and runs the app with nodemon for hot reload
 | 1. | `POST` | /api/users |  Register a user  |  All |
 | 2. | `POST` | /api/login |  Log in |  All |
 | 3. | `GET`  | /api/users |  Get all users |  Only Administrator |
-| 4. | `GET`  | /api/users/me |  Get user self data | 1. Registered users 
-2. Need to provide (JWT) token |
-| 5. | `GET`  | /api/users/:id |  Get user by id | 1. This registered user or admin 
-2. Need to provide (JWT) token |
-| 6. | `PUT`  | /api/users/:id |  Update user data by id | 1. This registered user or admin 
-2. Need to provide (JWT) token |
+| 4. | `GET`  | /api/users/me |  Get user self data | 1. Registered users 2. Need to provide (JWT) token |
+| 5. | `GET`  | /api/users/:id |  Get user by id | 1. This registered user or admin 2. Need to provide (JWT) token |
+| 6. | `PUT`  | /api/users/:id |  Update user data by id | 1. This registered user or admin 2. Need to provide (JWT) token |
 | 7. | `PATCH` | /api/users/release/:id |  Release locked user by id |  Only administrator |
-| 8. | `PATCH` | /api/users/user/:id |  Update any user params by send them in body include (isBusiness) | 1. This registered user or admin 
-2. Need to provide (JWT) token 
-3. isAdmin param can be changed only by admin |
-| 9. | `PATCH` | /api/users/isBusiness/:id |  Toggle user business status (isBusiness) | 1. This registered user or admin 
-2. Need to provide (JWT) token |
-| 10. | `DELETE` | /api/users/:id |  Delete user by id | 1. This registered user or admin 
-2. Need to provide (JWT) token |
+| 8. | `PATCH` | /api/users/user/:id |  Update any user params by send them in body include (isBusiness) | 1. This registered user or admin 2. Need to provide (JWT) token 3. isAdmin param can be changed only by admin |
+| 9. | `PATCH` | /api/users/isBusiness/:id |  Toggle user business status (isBusiness) | 1. This registered user or admin 2. Need to provide (JWT) token |
+| 10. | `DELETE` | /api/users/:id |  Delete user by id | 1. This registered user or admin 2. Need to provide (JWT) token |
 
 ### cards api
 
 | No. | Method | Route | Description | Access Control |
 | :---: | :---: | :---: | :---: | :---: |
-| 1. | `POST` | /api/cards |  Create new Business card  | 1. Need to be Business register user 
-2. Need to provide (JWT) token |
+| 1. | `POST` | /api/cards |  Create new Business card  | 1. Need to be Business register user 2. Need to provide (JWT) token |
 | 2. | `GET`  | /api/cards |  Get all cards |  All |
-| 3. | `GET`  | /api/cards/my-cards |  Get all user cards | 1. Need to be business register user 
-2. Need to provide (JWT) token |
+| 3. | `GET`  | /api/cards/my-cards |  Get all user cards | 1. Need to be business register user 2. Need to provide (JWT) token |
 | 4. | `GET`  | /api/cards/:id |  Get card by id |  All |
-| 5. | `PUT`  | /api/cards/:id |  Update card data | 1. Need to be owner of this card 
-2. Need to provide (JWT) token |
-| 6. | `PATCH`  | /api/cards/:id |  Toggle like of user for the card | 1. registered user 
-2. Need to provide (JWT) token |
+| 5. | `PUT`  | /api/cards/:id |  Update card data | 1. Need to be owner of this card 2. Need to provide (JWT) token |
+| 6. | `PATCH`  | /api/cards/:id |  Toggle like of user for the card | 1. registered user 2. Need to provide (JWT) token |
 | 7. | `PATCH` | /api/cards/business/:id |  Change card business number by provide in the body |  Only administrator |
-| 8. | `DELETE` | /api/cards/:id |  Delete business card | 1. User that is owner of this card or admin 
-2. Need to provide (JWT) token |
+| 8. | `DELETE` | /api/cards/:id |  Delete business card | 1. User that is owner of this card or admin 2. Need to provide (JWT) token |
 
 
 ### A link to requests in Postman includes a description of what should be put in the body of the request and examples
