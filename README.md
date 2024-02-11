@@ -116,7 +116,7 @@ Our application includes an advanced error logging system to enhance monitoring 
 
 #### Features:
 
-- **Log File Creation**: For each day, the logger creates a new log file in the `logs` directory. The log file is named after the current date (e.g., `2024-02-10.log`). If a file with that date already exists, the logger appends to the existing file.
+- **Log File Creation**: For each day, the logger creates a new log file in the `logs` directory. The log file is named after the current date (e.g., `2024-01-17.log`). If a file with that date already exists, the logger appends to the existing file.
 - **Log Content**: Each log entry includes:
   - the date and time of the request
   - method
