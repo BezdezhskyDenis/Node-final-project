@@ -3,7 +3,7 @@
     {
       "name": { "first": "regular", "last": "user" },
       "isBusiness": false,
-      "phone": "050-7777777",
+      "phone": "050-1234567",
       "email": "regular-user@gmail.com",
       "password": "Qq123456!",
       "address": {
@@ -18,7 +18,7 @@
       "name": { "first": "business", "last": "user" },
       "isBusiness": true,
 
-      "phone": "050-7777777",
+      "phone": "050-1234567",
       "email": "business-user@gmail.com",
       "password": "Qq123456!",
       "address": {
@@ -34,7 +34,7 @@
       "isBusiness": false,
 
       "isAdmin": true,
-      "phone": "050-7777777",
+      "phone": "050-7654321",
       "email": "admin-user@gmail.com",
       "password": "Adm!123Adm",
       "address": {
@@ -52,9 +52,9 @@
       "title": "first card",
       "subtitle": "this is the first card",
       "description": "this is the first card in the database",
-      "phone": "050-8888888",
+      "phone": "054-1234567",
       "email": "firstCard@gmail.com",
-      "user_id": "6376274068d78742d84f31d2",
+      "user_id": "65c8f0785da35945cdb26ac2",
       "web": "https://www.firstCard.co.il",
       "image": {
         "url": "",
@@ -75,9 +75,9 @@
 
       "subtitle": "this is the second card",
       "description": "this is the second card in the database",
-      "phone": "050-8888888",
+      "phone": "054-1234567",
       "email": "secondCard@gmail.com",
-      "user_id": "6376274068d78742d84f31d2",
+      "user_id": "65c8f0785da35945cdb26ac2",
       "web": "https://www.secondCard.co.il",
       "image": {
         "url": "",
@@ -97,9 +97,9 @@
       "bizNumber": 3333333,
       "subtitle": "this is the third card",
       "description": "this is the third card in the database",
-      "phone": "050-8888888",
+      "phone": "054-1234567",
       "email": "thirdCard@gmail.com",
-      "user_id": "6376274068d78742d84f31d2",
+      "user_id": "65c8f0785da35945cdb26ac2",
       "web": "https://www.thirdCard.co.il",
       "image": {
         "url": "",

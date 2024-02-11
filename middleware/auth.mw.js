@@ -1,11 +1,5 @@
 const jwt = require("jsonwebtoken");
-const {
-  errorLog,
-  warningLog,
-  successLog,
-  infoLog,
-  separateLine
-} = require("../utils/chalk.log");
+const { warningLog, separateLine } = require("../utils/chalk.log");
 
 function authorize(req, res, next) {
   const token = req.header("x-auth-token");
@@ -19,7 +13,7 @@ function authorize(req, res, next) {
     req.user = payload;
     next();
   } catch (err) {
-    separateLine()
+    separateLine();
     warningLog("Token verification error:", err);
     res.status(400).send("Invalid token.");
   }

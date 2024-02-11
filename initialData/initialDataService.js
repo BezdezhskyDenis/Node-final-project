@@ -7,7 +7,7 @@ const {
   warningLog,
   successLog,
   infoLog,
-  separateLine
+  separateLine,
 } = require("../utils/chalk.log");
 const bcrypt = require("bcrypt");
 
@@ -20,29 +20,34 @@ if (require.main === module) {
 }
 
 async function seed() {
-  separateLine()
-  infoLog("Checking DataBase for existing data");
-  const existingUsersCount = await User.countDocuments();
-  const existingCardsCount = await Card.countDocuments();
+  try {
+    separateLine();
+    infoLog("Checking DataBase for existing data");
+    const existingUsersCount = await User.countDocuments();
+    const existingCardsCount = await Card.countDocuments();
 
-  if (existingUsersCount > 0 || existingCardsCount > 0) {
-    successLog(
-      "The users and cards already exist, skipping the seeding process."
-    );
-    separateLine()
-    return;
+    if (existingUsersCount > 0 || existingCardsCount > 0) {
+      successLog(
+        "The users and cards already exist, skipping the seeding process."
+      );
+      separateLine();
+      return;
+    }
+    warningLog("Start Seeding initial Users and Cards");
+    await generateUsers();
+
+    const firstBusinessUser = await User.findOne({isBusiness: true});
+
+    if (firstBusinessUser) {
+      await generateCards(firstBusinessUser._id);
+    }
+
+    warningLog("Initial Users and Cards seed complete successfully");
+    separateLine();
+  } catch (error) {
+    errorLog(error);
+    res.status(500).send("An error occurred, Error: " + error.message);
   }
-  warningLog("Start Seeding initial Users and Cards");
-  const createdUsers = await generateUsers();
-
-  const firstBusinessUser = createdUsers.find((user) => user.isBusiness);
-
-  if (firstBusinessUser) {
-    await generateCards(firstBusinessUser._id);
-  }
-
-  warningLog("Initial Users and Cards seed complete successfully");
-  separateLine()
 }
 
 async function generateUsers() {

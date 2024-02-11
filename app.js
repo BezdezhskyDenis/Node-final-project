@@ -1,12 +1,6 @@
 require("./configs/loadEnvs");
 
-// Importing the required modules for our application
-const {
-  errorLog,
-  warningLog,
-  successLog,
-  infoLog,
-} = require("./utils/chalk.log");
+const { successLog } = require("./utils/chalk.log");
 const config = require("./configs/config");
 const { seed } = require("./initialData/initialDataService");
 const { logger } = require("./utils/logger");
@@ -20,7 +14,7 @@ app.use(express.json());
 app.use(express.static("./public"));
 app.use(require("cors")());
 
-app.use((req, res, next) => logger(req, res, next))
+app.use((req, res, next) => logger(req, res, next));
 
 // --- routes ---
 

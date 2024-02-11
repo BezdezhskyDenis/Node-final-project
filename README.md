@@ -93,7 +93,7 @@ This sets NODE_ENV to 'development' and runs the app with nodemon for hot reload
 
 ### A link to requests in Postman includes a description of what should be put in the body of the request and examples
 
-[API Documentation](https://documenter.getpostman.com/view/28260165/2s9YyzeJyB)
+### [API Documentation](https://documenter.getpostman.com/view/28260165/2s9YyzeJyB)
 
 ## Security Features
 
@@ -116,7 +116,7 @@ Our application includes an advanced error logging system to enhance monitoring 
 
 #### Features:
 
-- **Log File Creation**: For each day, the logger creates a new log file in the `logs` directory. The log file is named after the current date (e.g., `2024-01-17.log`). If a file with that date already exists, the logger appends to the existing file.
+- **Log File Creation**: For each day, the logger creates a new log file in the `logs` directory. The log file is named after the current date (e.g., `2024-02-10.log`). If a file with that date already exists, the logger appends to the existing file.
 - **Log Content**: Each log entry includes:
   - the date and time of the request
   - method

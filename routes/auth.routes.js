@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../models/users.model");
 const Joi = require("joi");
-require("dotenv/config");
 
 const bcrypt = require("bcrypt");
 
@@ -34,7 +33,9 @@ router.post("/", async (req, res) => {
       await user.save();
       return res
         .status(401)
-        .send("You excide log in attempts, your'e account is temporarily locked for 24 hours");
+        .send(
+          "You excide log in attempts, your'e account is temporarily locked for 24 hours"
+        );
     } else {
       await user.save();
       res.status(400).send("Invalid email or password");

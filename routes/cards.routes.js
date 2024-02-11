@@ -19,9 +19,9 @@ router.post("/", authorize, createNewCard);
 router.get("/", getAllCards);
 
 // GET users card by user id - authorized user
-router.get("/my-cards", authorize,  getCardsByUserId);
+router.get("/my-cards", authorize, getCardsByUserId);
 
-// GET card by ID 
+// GET card by ID
 router.get("/:id", getCardById);
 
 // Update (PUT) card by user who create the card or admin
