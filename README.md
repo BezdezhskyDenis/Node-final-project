@@ -66,7 +66,7 @@ This sets NODE_ENV to 'development' and runs the app with nodemon for hot reload
 
 | No. | Method | Route | Description | Access Control |
 | :---: | :---: | :---: | :---: | :---: |
-| 1. | `POST` | /api/users | - Register a user  | - All |
+| 1. | `POST` | /api/users | * Register a user  | * All |
 | 2. | `POST` | /api/login | - Log in | - All |
 | 3. | `GET`  | /api/users | - Get all users | - Only Administrator |
 | 4. | `GET`  | /api/users/me | - Get user self data | - Registered users - Need to provide (JWT) token |
