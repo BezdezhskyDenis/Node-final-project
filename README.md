@@ -65,7 +65,7 @@ This sets NODE_ENV to 'development' and runs the app with nodemon for hot reload
 ### users api
 
 | No. | Method | Route | Description | Access Control |
-| :---: | :---: | :---: | :---: | :---: | :---:|
+| :---: | :---: | :---: | :---: | :---: |
 | 1. | `POST` | /api/users | - Register a user  | - All |
 | 2. | `POST` | /api/login | - Log in | - All |
 | 3. | `GET`  | /api/users | - Get all users | - Only Administrator |
@@ -80,7 +80,7 @@ This sets NODE_ENV to 'development' and runs the app with nodemon for hot reload
 ### cards api
 
 | No. | Method | Route | Description | Access Control |
-| :---: | :---: | :---: | :---: | :---: | :---:|
+| :---: | :---: | :---: | :---: | :---: |
 | 1. | `POST` | /api/cards | - Create new Business card  | - Need to be Business register user - Need to provide (JWT) token |
 | 2. | `GET`  | /api/cards | - Get all cards | - All |
 | 3. | `GET`  | /api/cards/my-cards | - Get all user cards | - Need to be business register user - Need to provide (JWT) token |
