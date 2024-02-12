@@ -44,7 +44,7 @@ You will need 2 .env files:
 
 ```shell
 
-  npm start
+npm start
 ```
 
 This sets NODE_ENV to 'production' and runs the app using Node.js.
@@ -112,17 +112,23 @@ If a user attempts to log in with the same email address and fails due to incorr
 
 ### Error Logging
 
-Our application includes an advanced error logging system to enhance monitoring and debugging. This system automatically captures and logs all requests that result in a status code of 400 or higher.
+Our application includes an advanced error logging system to enhance monitoring and debugging. 
+This system automatically captures and logs all requests that result in a status code of 400 or higher.
 
 #### Features:
 
 - **Log File Creation**: For each day, the logger creates a new log file in the `logs` directory. The log file is named after the current date (e.g., `2024-02-10.log`). If a file with that date already exists, the logger appends to the existing file.
 - **Log Content**: Each log entry includes:
-  - the date and time of the request
-  - method
+  - Date and time of the request
+  - Method
   - URL route
-  - response status code
-  - error message.
+  - Response status code
+  - Error message.
 - **Log Directory**: All logs are stored in the `logs` directory at the root of the application.
 
 This logging system ensures that all critical errors are recorded, aiding in quick identification and resolution of issues affecting our users.
+
+## Author
+
+Denis Bezdezhsky
+[LinkedIn Profile](https://www.linkedin.com/in/denis-bezdezhsky-996822254)
