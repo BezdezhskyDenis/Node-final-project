@@ -1,6 +1,7 @@
 const { users, cards } = require("./initialData.json");
 const { User } = require("../models/users.model");
 const { Card } = require("../models/cards.model");
+const mongoose = require("mongoose");
 const _ = require("lodash");
 const {
   errorLog,
@@ -33,16 +34,19 @@ async function seed() {
       separateLine();
       return;
     }
-    warningLog("Start Seeding initial Users and Cards");
+    warningLog("Starting Seeding initial Data");
+    warningLog("Seeding initial Users");
     await generateUsers();
+    successLog("Seeding initial Users complete");
 
-    const firstBusinessUser = await User.findOne({isBusiness: true});
-
+    const firstBusinessUser = await User.findOne({ isBusiness: true });
     if (firstBusinessUser) {
-      await generateCards(firstBusinessUser._id);
+      warningLog("Seeding initial Cards");
+      await generateCards(firstBusinessUser._id.toString());
+      successLog("Seeding initial Cards complete");
     }
 
-    warningLog("Initial Users and Cards seed complete successfully");
+    successLog("Initial Users and Cards seed complete successfully");
     separateLine();
   } catch (error) {
     errorLog(error);
@@ -64,8 +68,8 @@ async function generateUsers() {
 async function generateCards(user_id) {
   const Ps = [];
   for (const card of cards) {
+    card.user_id = user_id;
     const newCard = await new Card(card).save();
-    newCard.user_id = user_id;
     Ps.push(newCard);
   }
 

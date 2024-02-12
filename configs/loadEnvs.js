@@ -1,5 +1,5 @@
 const path = require("node:path");
-const { errorLog, warningLog, successLog, infoLog } = require("../utils/chalk.log")
+const { infoLog } = require("../utils/chalk.log")
 
 const envPath = path.resolve(__dirname, `../${`.env.${process.env.NODE_ENV}`}`);
 
