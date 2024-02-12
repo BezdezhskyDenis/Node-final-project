@@ -1,10 +1,8 @@
 const fs = require("fs");
 const path = require("path");
-const { errorLog } = require("../utils/chalk.log");
+const { errorLog, warningLog, successLog, separateLine, infoLog } = require("../utils/chalk.log");
 
 const logger = async function (req, res, next) {
-
-  await fileSystemCheck()
 
   const originalSend = res.send;
   res.send = function (data) {
@@ -32,9 +30,12 @@ const logger = async function (req, res, next) {
 };
 
 function fileSystemCheck(){
+  separateLine()
+  infoLog("Checking log file system");
   if (!fs.existsSync(`${__dirname}/../logs`)) {
-    console.log("check")
+    warningLog("Creating logs directory");
     fs.mkdirSync(`${__dirname}/../logs`);
   }
+  successLog("Checking file system complete successful");
 }
-module.exports = { logger };
+module.exports = { logger, fileSystemCheck };

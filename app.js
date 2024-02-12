@@ -3,7 +3,7 @@ require("./configs/loadEnvs");
 const { successLog } = require("./utils/chalk.log");
 const config = require("./configs/config");
 const { seed } = require("./initialData/initialDataService");
-const { logger } = require("./utils/logger");
+const { logger, fileSystemCheck } = require("./utils/logger");
 const express = require("express");
 const morgan = require("morgan");
 
@@ -29,6 +29,7 @@ app.use((req, res) => {
 
 require("./db/dbService")
   .connect()
+  .then(()=> fileSystemCheck())
   .then(() => seed().catch(() => {}))
   .then(() => {
     app.listen(config.app.port, () => {
