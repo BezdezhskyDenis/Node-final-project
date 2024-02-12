@@ -23,7 +23,6 @@ The project is a Node.js-based application designed for managing user and busine
 9. **lodash (4.17.21)**: Utility library providing convenience functions for common programming tasks.
 10. **mongoose (8.1.0)**: MongoDB object modeling tool designed to work in an asynchronous environment.
 11. **morgan (1.10.0)**: HTTP request logger middleware for Node.js.
-12. **uuid (9.0.1)**: Creates unique identifiers (UUIDs).
 
 ## Installation
 
